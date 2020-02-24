@@ -1,0 +1,130 @@
+\section*{Discrete Distributions}
+
+\subsection*{Bernoulli Distribution}
+
+Binary experiment; 2 possible outcomes:
+\begin{enumerate}
+    \item \textit{Success}
+    \item \textit{Failure}
+\end{enumerate}
+
+Let
+\begin{equation*}
+    X = \begin{cases}
+    1 & \text{success} \\
+    0 & \text{failure} \\
+    \end{cases}
+\end{equation*}
+
+Denote with $X \sim \Bernoulli{p}$ for \textit{success probability} $p$.
+\begin{equation*}
+    \Prob{X = k} = \begin{cases}
+        1 - p & k = 0 \\
+        p & k = 1 \\
+    \end{cases}
+\end{equation*}
+
+\textbf{Expected value} $\ExpVal{X}$:
+\begin{equation*}
+    \ExpVal{X} = p
+\end{equation*}
+
+\textbf{Variance} $\Var{X}$:
+\begin{equation*}
+    \Var{X} = p - p^2 = p(1 - p)
+\end{equation*}
+
+\subsection*{Binomial Distribution}
+
+Repeated \textit{independent Bernoulli} experiments. Let $X$ denote number of \textit{successes} in $n$ independent repetitions of the experiment.
+\begin{itemize}
+    \item $p = \Prob{\text{success}}$
+    \item $q = 1 - p = \Prob{\text{failure}}$
+\end{itemize}
+Denote $X \sim \Binomial{n}{p}$ for $n$ trials each with $p$ \textit{success} probability.
+\begin{equation*}
+    \Forall k \in [0, n] \colon 
+    \Prob{X = k} = \binom{n}{k} p^k q^{n - k}
+\end{equation*}
+
+\textbf{Expected value} $\ExpVal{X}$:
+\begin{equation*}
+    \ExpVal{X} = np
+\end{equation*}
+
+\textbf{Variance} $\Var{X}$:
+\begin{equation*}
+    \Var{X} = npq
+\end{equation*}
+
+\subsection*{Geometric Distribution}
+
+Independent repetitions of a binary experiment.
+\begin{itemize}
+    \item $p = \Prob{\text{success}}$
+    \item $q = 1 - p = \Prob{\text{failure}}$
+\end{itemize}
+
+Let $X$ denote the number of trials up to and \textit{including} the first \textit{success}. Denote $X \sim \Geometric{p}$ for repeated trials each with \textit{success} probability $p$.
+
+\begin{equation*}
+    \Forall k \in [1, n] \colon
+    \Prob{X = k} = q^{k - 1} p
+\end{equation*}
+
+\textbf{Expected value} $\ExpVal{X}$:
+\begin{equation*}
+    \ExpVal{X} = \frac{1}{p}
+\end{equation*}
+
+\textbf{Variance} $\Var{X}$:
+\begin{equation*}
+    \Var{X} = \frac{q}{p^2}
+\end{equation*}
+
+\subsection*{Poisson Distribution}
+
+\begin{itemize}
+    \item Model number of events occurring in \textit{time interval} or \textit{space interval}.
+    \item Approximate Binomial distribution for \textit{large} sample size $n$ and \textit{small} probability $p$ with rate parameter
+    \begin{equation*}
+        \lambda = np
+    \end{equation*}
+    \begin{enumerate}
+        \item \textit{Large} sample size:
+        \begin{equation*}
+            n \ge 20
+        \end{equation*}
+        \item \textit{Small} probability:
+        \begin{equation*}
+            p \le 0.05
+        \end{equation*}
+    \end{enumerate}
+\end{itemize}
+
+Denote $X \sim \Poisson{\lambda}$ for Poisson distribution with \textit{rate parameter} $\lambda > 0$ if
+\begin{equation*}
+    \Forall k \in [1, n] \colon \Prob{X = k} = \frac{ e^{-\lambda} \lambda^k }{ k! }
+\end{equation*}
+
+\textbf{Expected value} $\ExpVal{X}$:
+\begin{equation*}
+    \ExpVal{X} = \lambda
+\end{equation*}
+
+\textbf{Variance} $\Var{X}$:
+\begin{equation*}
+    \Var{X} = \lambda
+\end{equation*}
+
+\subsubsection*{Poisson Process}
+
+Assumptions:
+\begin{itemize}
+    \item Events occur \textit{randomly}.
+    \item Events occur \textit{one at a time}.
+    \item Events occur at a rate of $\lambda$ per unit time or per unit space.
+    \item Number of events in non-overlapping space/time intervals are \textit{independent}.
+\end{itemize}
+
+If $X$ is the number of events during a space/time interval of magnitude $t$, then $X \sim \Poisson{ \lambda t }$.
