@@ -189,4 +189,32 @@ That is $E_1$ and $E_2$ \textit{cannot both occur}.
     E_1 \xor E_2 \iff \Prob{E_1 \cap E_2} = \Prob{E_1} + \Prob{E_2}
 \end{equation*}
 
-\section*{Axiomatic Definition of Probability}
+\section*{Probability Definition}
+
+A \textbf{probability measure} $\mathrm{P} \colon E \to \Real$ associates each \textit{event} $E$ with a probability $\Prob{E}$ such that the three properties are satisfied:
+
+\begin{enumerate}
+    \item \textbf{Non-negative}:
+    \begin{equation*}
+        \Forall E \colon \Prob{E} \ge 0
+    \end{equation*}
+    \item \textbf{Sums to} $1$:
+    \begin{equation*}
+        \Prob{\Omega} = 1
+    \end{equation*}
+    \item \textbf{Countable additivity}: given \textit{events} $E_1, \dots, E_n$ such that each event is \textit{independent} from all other event:
+    \begin{equation*}
+        \Forall i, j \in [1, n] \colon i \ne j \to E_i \cap E_j = \varnothing
+    \end{equation*}
+    Then
+    \begin{equation*}
+        \Prob{E_1 \cup \cdots \cup E_n} = \Prob{E_1} + \cdots + \Prob{E_n}
+    \end{equation*}
+\end{enumerate}
+
+\section*{Combinatorical Probability}
+
+If all outcomes for a random experiment are \textit{equally} likely, then the probability of event $E$ is
+\begin{equation*}
+    \Prob{E} = \frac{ \mathrm{n}(E) }{ \mathrm{n}(\Omega) }
+\end{equation*}
