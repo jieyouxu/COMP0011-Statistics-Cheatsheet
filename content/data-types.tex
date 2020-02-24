@@ -1,0 +1,192 @@
+\section*{Data Types}
+
+\begin{itemize}
+    \item \textbf{Discrete}: set of possible values is \textit{countable}.
+    \begin{enumerate}
+        \item \textbf{Binary}: 2 possible cases.
+        \item \textbf{Categorical}: possible values are \textit{categories}.
+    \end{enumerate}
+    \item \textbf{Continuous}: set of possible values is \textit{uncountable}.
+\end{itemize}
+
+\section*{Graphs}
+
+\begin{itemize}
+    \item \textbf{Discrete}: \textit{bar chart}.
+    \begin{itemize}
+        \item \textit{height} of bar $\propto$ \textit{frequency} of value.
+        \item can use \textit{relative frequency}.
+    \end{itemize}
+    \item \textbf{Continuous}: \textit{histogram}.
+    \begin{itemize}
+        \item \textit{area} of box $\propto$ \textit{frequency} of \textit{class interval}.
+        \item can use \textit{relative frequency}.
+    \end{itemize}
+\end{itemize}
+
+\section*{Summary Statistics}
+
+\begin{itemize}
+    \item Measures of \textit{location}:
+    \begin{itemize}
+        \item \textbf{Mean}, \textbf{Median}, \textbf{Mode}
+    \end{itemize}
+    \item Measures of \textit{dispersion} (\textit{spread}):
+    \begin{itemize}
+        \item \textbf{Sample variance} (\textbf{sample standard deviation}), \textbf{Range}, \textbf{Interquartile range}, \textbf{Coefficient of Variation}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Sample Mean}
+
+\subsubsection*{Observations}
+
+$n$ \textit{observations} $x_1, \dots, x_n$, \textbf{sample mean} $\bar{x}$:
+\begin{equation*}
+    \bar{x} = \frac{1}{n} \sum \limits_{i = 1}^{n} x_i
+\end{equation*}
+
+\subsubsection*{Observations with Frequencies}
+
+$n$ \textit{observations} $x_1, \dots, x_N$ with \textit{frequencies} $f_1, \dots, f_N$, \textbf{sample mean} $\bar{x}$:
+\begin{equation*}
+    \bar{x} = \frac{
+        \sum \limits_{i = 1}^{N} f_i x_i
+    }{
+        \sum \limits_{i = 1}^{N} f_i
+    }
+\end{equation*}
+
+\subsection*{Sample Median}
+
+Sort observations in order, \textbf{sample median} is the \textit{middle} value (odd) or average of \textit{middle two} values (even).
+
+\subsection*{Sample Mode}
+
+\textbf{Sample mode} is the \textit{Most frequently} occurring value.
+
+\subsection*{Sample Variance}
+
+\subsubsection*{Observations}
+
+$n$ observations $x_1, \dots, x_n$, \textbf{sample variance} $s^2$:
+\begin{align*}
+    s^2
+    &= \frac{1}{n - 1} \sum \limits_{i = 1}^{n} \left( x_i - \bar{x} \right)^2 \\
+    &= \frac{1}{n - 1} \left( \sum \limits_{i = 1}^{n} x_i^2 - n \bar{x}^2 \right)
+\end{align*}
+
+\subsubsection*{Observations with Frequencies}
+
+\textit{Observations} $x_1, \dots, x_N$ with \textit{frequencies} $f_1, \dots, f_N$, \textit{sample size} $n = \sum \nolimits_{i=1}^{N} f_i$:
+\begin{align*}
+    s^2
+    &= \frac{1}{n - 1} \sum \limits_{i = 1}^{N} f_i \left( x_i - \bar{x} \right)^2 \\
+    &= \frac{1}{n - 1} \left( \sum \limits_{i = 1}^{N} f_i x_i^2 - n \bar{x}^2 \right)
+\end{align*}
+
+\subsection*{Sample Standard Deviation}
+
+\begin{equation*}
+    s = \sqrt{s^2}
+\end{equation*}
+
+\subsection*{Sample Range}
+
+\textit{Difference} between largest and smallest value.
+
+\subsection*{Sample Interquartile Range}
+
+Sort data, divide into 4 parts: $Q_1$ (\textit{lower quartile}), $Q_2$ (\textit{median}) and $Q_3$ (\textit{upper quartile}):
+\begin{equation*}
+    \text{interquartile\_range} = Q_3 - Q_1
+\end{equation*}
+
+\subsection*{Sample Coefficient of Variation}
+
+\begin{equation*}
+    CV = \frac{s}{\bar{x}}
+\end{equation*}
+
+\begin{remark}
+    Sample statistics \textit{estimate} or \textit{infer} their respective true population statistics.
+\end{remark}
+
+\section*{Probability Terminology}
+
+\textbf{Random experiment}: action with \textit{uncertain} outcome.
+
+\textbf{Sample space} $\Omega$:
+\begin{equation*}
+    \Omega = \set{ \text{all possible outcomes} }
+\end{equation*}
+
+\textbf{Event} or \textbf{Event Space} $E$:
+\begin{equation*}
+    E \subseteq \Omega
+\end{equation*}
+
+\textbf{Complement Event} $\AbsComplement{E}$:
+
+Event $\AbsComplement{E}$ is the event that $E$ does \textit{not} occur.
+\begin{equation*}
+    \AbsComplement{E} = \set{ \omega \in \Omega \given \omega \not\in E }
+\end{equation*}
+
+\textbf{Intersection of Events} $E_1 \cap E_2$:
+
+$E_1 \cap E_2$ is event that $E_1$ and $E_2$ occurring \textit{together}.
+\begin{equation*}
+    E_1 \cap E_2 = \set{ \omega \in \Omega \given \omega \in E_1 \land \omega \in E_2 }
+\end{equation*}
+
+\textbf{Union of Events} $E_1 \cup E_2$:
+
+$E_1 \cup E_2$ is the event that $E_1$ \textit{or} $E_2$ occurring or \textit{both}.
+\begin{equation*}
+    E_1 \cup E_2 = \set{ \omega \in \Omega \given \omega \in E_1 \lor \omega \in E_2 }
+\end{equation*}
+
+\textbf{Difference} $E_1 \setminus E_2$:
+
+$E_1 \setminus E_2$ is the event that $E_1$ \textit{occurs} but \textit{not} $E_2$.
+\begin{equation*}
+    E_1 \setminus E_2 = \set{ \omega \in \Omega \given \omega \in E_1 \land \omega \not\in E_2 }
+\end{equation*}
+
+\textbf{Useful Identities}:
+\begin{align*}
+    \AbsComplement{A \cap B} &= \AbsComplement{A} \cup \AbsComplement{B} \\
+    \AbsComplement{A \cup B} &= \AbsComplement{A} \cap \AbsComplement{B} \\
+    A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) \\
+    A \cup (B \cap C) &= (A \cup B) \cap (A \cup C)
+\end{align*}
+
+\textbf{Disjoint} or \textbf{Mutually Exclusive} $E_1 \xor E_2$:
+
+Given events $E_1$ and $E_2$ then they are \textit{disjoint} or \textit{mutually exclusive} iff:
+\begin{equation*}
+    E_1 \cap E_2 = \varnothing \iff E_1 \xor E_2
+\end{equation*}
+
+That is $E_1$ and $E_2$ \textit{cannot both occur}.
+
+\textbf{Probability of an Event} $\Prob{E}$: \textit{proportion} of times that event $E$ is expected to occur in a large sample size.
+
+\section*{Probability Properties}
+
+\begin{gather*}
+    \begin{aligned}
+        \Prob{E} &\ge 0 \\
+        \Prob{E} &\le 1 \\
+        \Prob{\Omega} &= 1 \\
+        \Prob{\varnothing} &= 0
+    \end{aligned} \\
+    \Prob{E_1 \cup E_2} = \Prob{E_1} + \Prob{E_2} - \Prob{E_1 \cap E_2}
+\end{gather*}
+
+\begin{equation*}
+    E_1 \xor E_2 \iff \Prob{E_1 \cap E_2} = \Prob{E_1} + \Prob{E_2}
+\end{equation*}
+
+\section*{Axiomatic Definition of Probability}
