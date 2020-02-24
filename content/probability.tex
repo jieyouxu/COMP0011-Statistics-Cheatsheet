@@ -104,3 +104,87 @@ If all outcomes for a random experiment are \textit{equally} likely, then the pr
 \begin{equation*}
     \Prob{E} = \frac{ \mathrm{n}(E) }{ \mathrm{n}(\Omega) }
 \end{equation*}
+
+\section*{Conditional Probability}
+
+The \textbf{conditional probability} of event $E_1$ occurring \textit{given} $E_2$ occurred
+\begin{equation*}
+    \Prob{E_1 \given E_2} = \frac{ \Prob{E_1 \cap E_2} }{ \Prob{E_2} }
+\end{equation*}
+
+\begin{remark}
+    \textbf{Prosecutor's fallacy}:
+    \begin{equation*}
+        \Prob{E_1 \given E_2} \ne \Prob{E_2 \given E_1}
+    \end{equation*}
+\end{remark}
+
+\subsection*{Independence}
+
+Since $E_1$ and $E_2$ are \textit{independent} iff $\Prob{E_1 \cap E_2} = \Prob{E_1} \Prob{E_2}$, then if $\Prob{E_1} > 0$ and $\Prob{E_2} > 0$
+\begin{align*}
+    \Prob{E_1 \given E_2}
+    &= \frac{\Prob{E_1 \cap E_2}}{\Prob{E_2}}
+    = \frac{\Prob{E_1} \Prob{E_2}}{\Prob{E_2}}
+    = \Prob{E_1} \\
+    \Prob{E_2 \given E_1}
+    &= \Prob{E_2}
+\end{align*}
+
+\section*{Probability Rules}
+
+\subsection*{Bayes Theorem}
+
+To compute $\Prob{E_1 \given E_2}$ given $\Prob{E_2 \given E_1}$
+\begin{equation*}
+    \Prob{E_1 \given E_2}
+    = \frac{\Prob{E_2 \given E_1} \Prob{E_1}}{\Prob{E_2}}
+\end{equation*}
+
+\subsection*{Law of Total Probability}
+
+Given \textit{mutually exclusive} events $E_1, \dots, E_n$ where $E \subseteq E_1 \cup \cdots \cup E_n$, then if $E$ occurs exactly one of $\set{ E_1, \dots, E_n }$ must occur (even if $n = \infty$):
+\begin{align*}
+    \Prob{E}
+    &= \sum \nolimits_{i = 1}^{n} \Prob{E \cap E_i} \\
+    &= \sum \nolimits_{i = 1}^{n} \Prob{E \given E_i} \Prob{E_i}
+\end{align*}
+
+\subsection*{Intersection of Events}
+
+\begin{itemize}
+    \item 2 events:
+    \begin{equation*}
+        \Prob{E_1 \cap E_2} = \Prob{E_2 \given E_1} \Prob{E_1}
+    \end{equation*}
+    \item 3 events:
+    \begin{align*}
+        &\ProbS{(E_1 \cap E_2) \cap E_3} \\
+        = &\Prob{E_3 \given E_1 \cap E_2} \Prob{E_1 \cap E_2} \\
+        = &\Prob{E_3 \given E_1 \cap E_2} \Prob{E_2 \given E_1} \Prob{E_1}
+    \end{align*}
+\end{itemize}
+
+\subsection*{Union of Events}
+
+\begin{itemize}
+    \item 2 events:
+    \begin{equation*}
+        \Prob{E_1 \cup E_2} = \Prob{E_1} + \Prob{E_2} - \Prob{E_1 \cap E_2}
+    \end{equation*}
+    \item 3 events:
+    \begin{align*}
+        &\Prob{E_1 \cup E_2 \cup E_3} \\
+        &= \begin{aligned}[t]
+        &\Prob{E_1} + \Prob{E_2} + \Prob{E_3} \\
+        &- \Prob{E_1 \cap E_2} \\
+        &- \Prob{E_1 \cap E_3} \\
+        &- \Prob{E_2 \cap E_3} \\
+        &+ \Prob{E_1 \cap E_2 \cap E_3}
+        \end{aligned}
+    \end{align*}
+    \item 3 events (\textit{mutually exclusive}):
+    \begin{equation*}
+        \Prob{E_1 \cup E_2 \cup E_3} = \Prob{E_1} + \Prob{E_2} + \Prob{E_3}
+    \end{equation*}
+\end{itemize}
