@@ -1,0 +1,137 @@
+\section*{Discrete Random Variables}
+
+\textbf{Random variable}: a \textit{mapping} $X$ sending each point in the \textit{sample space} $\Omega$ to a real value $\Real$:
+\begin{equation*}
+    X \colon \Omega \to \Real
+\end{equation*}
+
+\subsection*{Types of Random Variables}
+
+\begin{itemize}
+    \item \textbf{Discrete} random variables: \textit{countable} set of possible values.
+    \item \textbf{Continuous} random variables: \textit{uncountable} set of possible values.
+\end{itemize}
+
+\subsection*{Sample Statistics vs Population Statistics}
+
+\subsubsection*{Sample Statistics}
+
+Given \textit{sample size} $n = \sum \nolimits_{i = 1}^{N} f_i$:
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Y|Y@{}}
+        \toprule
+        Observed values & Relative frequency \\
+        \midrule
+        $x_1$ & $f_1 / n$ \\
+        $\vdots$ & $\vdots$ \\
+        $x_N$ & $f_N / n$ \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+\textbf{Sample mean} $\bar{x}$:
+\begin{equation*}
+    \bar{x} = \sum \nolimits_{i = 1}^{N} x_i \frac{f_i}{n}
+\end{equation*}
+\textbf{Sample variance} $s^2$:
+\begin{align*}
+    s^2
+    &= \sum \nolimits_{i = 1}^{N} (x_i - \bar{x})^2 \frac{f_i}{n - 1} \\
+    &= \frac{ \left( \sum \nolimits_{i = 1}^{N} x_i^2 f_i \right) - n \bar{x}^2 }{n - 1}
+\end{align*}
+\textbf{Sample standard deviation} $s$:
+\begin{equation*}
+    s = \sqrt{s^2}
+\end{equation*}
+
+\subsubsection*{Population Statistics}
+
+\textsc{Note}: $N = \infty$ is okay.
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Y|Y@{}}
+        \toprule
+        Observed values & Probability \\
+        \midrule
+        $x_1$ & $p_1 = \Prob{X = x_1}$ \\
+        $\vdots$ & $\vdots$ \\
+        $x_N$ & $p_N = \Prob{X = x_N}$ \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+Properties:
+\begin{itemize}
+    \item \textbf{Non-negative}:
+    \begin{equation*}
+        \Forall i \in [1, n] \colon p_i \ge 0
+    \end{equation*}
+    \item \textbf{Sums to} $1$:
+    \begin{equation*}
+        \sum \nolimits_{i = 1}^{N} p_i = 1
+    \end{equation*}
+\end{itemize}
+\textbf{Population mean} $\mu$:
+\begin{equation*}
+    \mu = \sum \nolimits_{i = 1}^{N} x_i p_i = \ExpVal{X}
+\end{equation*}
+\textbf{Population variance} $\sigma^2$:
+\begin{align*}
+    \sigma^2
+    &= \sum \nolimits_{i = 1}^{N} \left( x_i - \mu \right)^2 p_i \\
+    &= \left(  \sum \nolimits_{i = 1}^{N} x_i^2 p_i \right) - \mu^2 \\
+    &= \Var{X}
+\end{align*}
+\textbf{Population standard deviation} $\sigma$:
+\begin{equation*}
+    \sigma = \sqrt{\sigma^2}
+\end{equation*}
+
+\subsection*{Expectation (Expected Value)}
+
+If $X$ is a \textit{discrete} random variable and $Y = f(X)$ is a transformation on $X$ then
+\begin{align*}
+    \ExpVal{Y}
+    &= \sum \nolimits_{j = 1}^{N} y_j \Prob{Y = y_j}  \\
+    &= \ExpValS{f(X)}\\
+    &= \sum \nolimits_{i = 1}^{N} f(x_i) \Prob{X = x_i} \\
+    &= \sum \nolimits_{i = 1}^{N} f(x_i) p_i
+\end{align*}
+
+\subsection*{Variance}
+
+\begin{align*}
+    \Var{X}
+    &= \sum \nolimits_{i = 1}^{N} (x_i - \mu)^2 p_i \\
+    &= \ExpValS{(X - \mu)^2} \\
+    &= \left( \sum \nolimits_{i = 1}^{N} x_i^2 p_i \right) - \mu^2 \\
+    &= \ExpVal{X^2} - \mu^2
+\end{align*}
+
+\subsection*{Independence}
+
+Two \textit{discrete} random variables $X$ and $Y$ are \textit{independent} iff
+\begin{equation*}
+    \Forall x_i, y_j \colon \Prob{X = x_i, Y = y_j} = \Prob{X = x_i}\Prob{Y = y_j}
+\end{equation*}
+every event $X = x_i$ and $Y = y_j$ are \textit{independent}.
+
+\subsection*{Expectation and Variance Identities}
+
+For constants $a, b \in \Real$:
+\begin{gather*}
+    \ExpVal{a X + b} = a \ExpVal{X} + b \\
+    \Var{a X + b} = a^2 \Var{X}
+\end{gather*}
+
+For events $X, Y$,
+\begin{equation*}
+    \ExpVal{X \pm Y} = \ExpVal{X} \pm \ExpVal{Y}
+\end{equation*}
+If $X$ and $Y$ are \textit{independent}
+\begin{equation*}
+    \Var{X \pm Y} = \Var{X} + \Var{Y}
+\end{equation*}
+
+\begin{remark}
+    Notice the sign on $\Var{X \pm Y}$ always transform to $+$!
+\end{remark}
