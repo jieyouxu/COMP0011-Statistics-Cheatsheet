@@ -1,0 +1,87 @@
+\section*{Summary Statistics}
+
+\begin{itemize}
+    \item Measures of \textit{location}:
+    \begin{itemize}
+        \item \textbf{Mean}, \textbf{Median}, \textbf{Mode}
+    \end{itemize}
+    \item Measures of \textit{dispersion} (\textit{spread}):
+    \begin{itemize}
+        \item \textbf{Sample variance} (\textbf{sample standard deviation}), \textbf{Range}, \textbf{Interquartile range}, \textbf{Coefficient of Variation}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Sample Mean}
+
+\subsubsection*{Observations}
+
+$n$ \textit{observations} $x_1, \dots, x_n$, \textbf{sample mean} $\bar{x}$:
+\begin{equation*}
+    \bar{x} = \frac{1}{n} \sum \limits_{i = 1}^{n} x_i
+\end{equation*}
+
+\subsubsection*{Observations with Frequencies}
+
+$n$ \textit{observations} $x_1, \dots, x_N$ with \textit{frequencies} $f_1, \dots, f_N$, \textbf{sample mean} $\bar{x}$:
+\begin{equation*}
+    \bar{x} = \frac{
+        \sum \limits_{i = 1}^{N} f_i x_i
+    }{
+        \sum \limits_{i = 1}^{N} f_i
+    }
+\end{equation*}
+
+\subsection*{Sample Median}
+
+Sort observations in order, \textbf{sample median} is the \textit{middle} value (odd) or average of \textit{middle two} values (even).
+
+\subsection*{Sample Mode}
+
+\textbf{Sample mode} is the \textit{Most frequently} occurring value.
+
+\subsection*{Sample Variance}
+
+\subsubsection*{Observations}
+
+$n$ observations $x_1, \dots, x_n$, \textbf{sample variance} $s^2$:
+\begin{align*}
+    s^2
+    &= \frac{1}{n - 1} \sum \limits_{i = 1}^{n} \left( x_i - \bar{x} \right)^2 \\
+    &= \frac{1}{n - 1} \left( \sum \limits_{i = 1}^{n} x_i^2 - n \bar{x}^2 \right)
+\end{align*}
+
+\subsubsection*{Observations with Frequencies}
+
+\textit{Observations} $x_1, \dots, x_N$ with \textit{frequencies} $f_1, \dots, f_N$, \textit{sample size} $n = \sum \nolimits_{i=1}^{N} f_i$:
+\begin{align*}
+    s^2
+    &= \frac{1}{n - 1} \sum \limits_{i = 1}^{N} f_i \left( x_i - \bar{x} \right)^2 \\
+    &= \frac{1}{n - 1} \left( \sum \limits_{i = 1}^{N} f_i x_i^2 - n \bar{x}^2 \right)
+\end{align*}
+
+\subsection*{Sample Standard Deviation}
+
+\begin{equation*}
+    s = \sqrt{s^2}
+\end{equation*}
+
+\subsection*{Sample Range}
+
+\textit{Difference} between largest and smallest value.
+
+\subsection*{Sample Interquartile Range}
+
+Sort data, divide into 4 parts: $Q_1$ (\textit{lower quartile}), $Q_2$ (\textit{median}) and $Q_3$ (\textit{upper quartile}):
+\begin{equation*}
+    \text{interquartile\_range} = Q_3 - Q_1
+\end{equation*}
+
+\subsection*{Sample Coefficient of Variation}
+
+\begin{equation*}
+    CV = \frac{s}{\bar{x}}
+\end{equation*}
+
+\begin{remark}
+    Sample statistics \textit{estimate} or \textit{infer} their respective true population statistics.
+\end{remark}
